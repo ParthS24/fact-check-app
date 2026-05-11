@@ -2,12 +2,13 @@ import streamlit as st
 import pdfplumber
 import google.generativeai as genai
 from duckduckgo_search import DDGS
+import os
 
 # -----------------------------
 # GEMINI API CONFIGURATION
 # -----------------------------
 
-API_KEY = st.secrets("GEMINI_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=API_KEY)
 
